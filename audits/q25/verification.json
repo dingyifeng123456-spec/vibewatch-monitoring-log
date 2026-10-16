@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "buys": 2,
+  "archiveProviders": 2,
+  "scannedBlocks": 574988,
+  "scanChunks": 112,
+  "outgoingTransfers": 48,
+  "directTreasuryToPool": 0,
+  "calculations": [
+    {
+      "date": "2026-10-12",
+      "priceBeforeWbnbPerFlapjax": "0.000000000414728962783164",
+      "priceAfterWbnbPerFlapjax": "0.000000000415987328380118",
+      "priceBeforeFlapjaxPerWbnb": "2411213321.802262438",
+      "priceAfterFlapjaxPerWbnb": "2403919378.732199447",
+      "priceImpactPercent": "0.303418789107",
+      "inversePriceChangePercent": "-0.302500944405",
+      "gasBnb": "0.000006376400000000",
+      "netNonBuyOutflowBnb": "0.002026554600000000"
+    },
+    {
+      "date": "2026-10-13",
+      "priceBeforeWbnbPerFlapjax": "0.000000000415987328380118",
+      "priceAfterWbnbPerFlapjax": "0.000000000417247600145159",
+      "priceBeforeFlapjaxPerWbnb": "2403919378.732199447",
+      "priceAfterFlapjaxPerWbnb": "2396658482.043045802",
+      "priceImpactPercent": "0.302959171845",
+      "inversePriceChangePercent": "-0.302044101537",
+      "gasBnb": "0.000006376300000000",
+      "netNonBuyOutflowBnb": "0.004336196712783217"
+    }
+  ]
+}

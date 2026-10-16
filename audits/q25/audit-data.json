@@ -1,0 +1,159 @@
+{
+  "observedAt": "2026-10-16T03:07:17.568Z",
+  "chainId": "0x38",
+  "pool": "0xca93ec685b8623688e6b236f9068034b298c2150",
+  "token": "0x90c8889f428f9ebb77bb8f15cad3a50a9ac680df",
+  "treasury": "0x7c34e9e21ee28a49ff0b84b61774119e6633359f",
+  "buys": [
+    {
+      "date": "2026-10-12",
+      "publishedCommentId": "9f6ccf0a-7ed3-4647-8acb-2a7d853dc8da",
+      "publishedAt": "2026-10-12T18:47:07.326023Z",
+      "hash": "0x9afdc96e3ca876b5b617a26ba5105012ed8c33e805c77b1616bf48c198d5cbf1",
+      "block": 127261246,
+      "blockHash": "0x18629c7bb92bc012b49d3663ff148d10cb75928f00c79909741e27fe1124ddc5",
+      "blockTimestamp": "2026-10-12T18:46:27.000Z",
+      "status": "0x1",
+      "from": "0x7c34e9e21ee28a49ff0b84b61774119e6633359f",
+      "to": "0x1b81d678ffb9c0263b24a97847620c99d213eb14",
+      "valueWei": "10000000000000000",
+      "gasUsed": "127528",
+      "gasPriceWei": "50000000",
+      "transfers": [
+        {
+          "from": "0xca93ec685b8623688e6b236f9068034b298c2150",
+          "to": "0x7c34e9e21ee28a49ff0b84b61774119e6633359f",
+          "amountAtomic": "23834879521763892137228328",
+          "logIndex": 40
+        }
+      ],
+      "swap": {
+        "topic": "0x19b47279256b2a23a1665c810c8d55a1758940ee09377d4f8d26497a3577dc83",
+        "amount0": "-23834879521763892137228328",
+        "amount1": "10000000000000000",
+        "sqrtPriceX96": "1615919175229289091042512",
+        "liquidity": "320678316678999036604866",
+        "tick": "-216015",
+        "logIndex": 43
+      },
+      "historical": [
+        {
+          "block": 127261245,
+          "url": "https://bsc-dataseed.bnbchain.org",
+          "error": "{\"code\":-32000,\"message\":\"missing trie node\"}"
+        },
+        {
+          "block": 127261245,
+          "url": "https://bsc.drpc.org",
+          "error": "{\"message\":\"Temporary internal error. Please retry, trace-id: d82ca3c1eb208cb60957518cb0792251\",\"code\":19}"
+        },
+        {
+          "block": 127261245,
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "slot0": "0x0000000000000000000000000000000000000000000155aa8f3d8220b29b2b08fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcb413000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000c800c800000000000000000000000000000000000000000000000000000000000000001",
+          "sqrtPriceX96": "1613473238700077591767816",
+          "tick": "-216045",
+          "nativeBalanceWei": "142613528959380905",
+          "tokenBalanceAtomic": "231707297806810631976334347"
+        },
+        {
+          "block": 127261246,
+          "url": "https://bsc-dataseed.bnbchain.org",
+          "error": "{\"code\":-32000,\"message\":\"missing trie node\"}"
+        },
+        {
+          "block": 127261246,
+          "url": "https://bsc.drpc.org",
+          "error": "{\"message\":\"Temporary internal error. Please retry, trace-id: 81a6781ea09a99fe53b1aeccec3190cd\",\"code\":19}"
+        },
+        {
+          "block": 127261246,
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "slot0": "0x00000000000000000000000000000000000000000001562f276dac5185e00cd0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcb431000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000c800c800000000000000000000000000000000000000000000000000000000000000001",
+          "sqrtPriceX96": "1615919175229289091042512",
+          "tick": "-216015",
+          "nativeBalanceWei": "132607152559380905",
+          "tokenBalanceAtomic": "255542177328574524113562675"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "publishedCommentId": "80547a29-df3e-449b-81e4-9d9cb05180f9",
+      "publishedAt": "2026-10-13T18:41:59.086860Z",
+      "hash": "0xc94de373d1fb00093431224a97475b3b2b48b9a4962d15acbe9d9c5c016d720c",
+      "block": 127452454,
+      "blockHash": "0x8995e9971da031a01e5775292aad4d61598cdbe504fd9e2a36c765516e51f936",
+      "blockTimestamp": "2026-10-13T18:41:15.000Z",
+      "status": "0x1",
+      "from": "0x7c34e9e21ee28a49ff0b84b61774119e6633359f",
+      "to": "0x1b81d678ffb9c0263b24a97847620c99d213eb14",
+      "valueWei": "10000000000000000",
+      "gasUsed": "127526",
+      "gasPriceWei": "50000000",
+      "transfers": [
+        {
+          "from": "0xca93ec685b8623688e6b236f9068034b298c2150",
+          "to": "0x7c34e9e21ee28a49ff0b84b61774119e6633359f",
+          "amountAtomic": "23762833230024087278551319",
+          "logIndex": 256
+        }
+      ],
+      "swap": {
+        "topic": "0x19b47279256b2a23a1665c810c8d55a1758940ee09377d4f8d26497a3577dc83",
+        "amount0": "-23762833230024087278551319",
+        "amount1": "10000000000000000",
+        "sqrtPriceX96": "1618365111758500590317208",
+        "liquidity": "320678316678999036604866",
+        "tick": "-215985",
+        "logIndex": 259
+      },
+      "historical": [
+        {
+          "block": 127452453,
+          "url": "https://bsc-dataseed.bnbchain.org",
+          "error": "{\"code\":-32000,\"message\":\"missing trie node\"}"
+        },
+        {
+          "block": 127452453,
+          "url": "https://bsc.drpc.org",
+          "error": "{\"message\":\"Temporary internal error. Please retry, trace-id: b2f4856fb9392503ef699a1e10293db6\",\"code\":19}"
+        },
+        {
+          "block": 127452453,
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "slot0": "0x00000000000000000000000000000000000000000001562f276dac5185e00cd0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcb431000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000c800c800000000000000000000000000000000000000000000000000000000000000001",
+          "sqrtPriceX96": "1615919175229289091042512",
+          "tick": "-216015",
+          "nativeBalanceWei": "128270955846597688",
+          "tokenBalanceAtomic": "250492177328574524113562675"
+        },
+        {
+          "block": 127452454,
+          "url": "https://bsc-dataseed.bnbchain.org",
+          "error": "{\"code\":-32000,\"message\":\"missing trie node\"}"
+        },
+        {
+          "block": 127452454,
+          "url": "https://bsc.drpc.org",
+          "error": "{\"message\":\"Request timeout on the free plan, please upgrade to paid plan\",\"code\":30}"
+        },
+        {
+          "block": 127452454,
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "slot0": "0x0000000000000000000000000000000000000000000156b3bf9dd6825924ee98fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcb44f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000c800c800000000000000000000000000000000000000000000000000000000000000001",
+          "sqrtPriceX96": "1618365111758500590317208",
+          "tick": "-215985",
+          "nativeBalanceWei": "118264579546597688",
+          "tokenBalanceAtomic": "274255010558598611392113994"
+        }
+      ]
+    }
+  ],
+  "poolMetadata": {
+    "token0": "0x00000000000000000000000090c8889f428f9ebb77bb8f15cad3a50a9ac680df",
+    "token1": "0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "fee": "0x0000000000000000000000000000000000000000000000000000000000002710"
+  },
+  "decimals": 18
+}
