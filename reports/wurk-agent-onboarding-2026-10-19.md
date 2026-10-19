@@ -2,15 +2,15 @@
 
 ## Result
 
-I created a **new WURK agent account** through the documented free SIWX flow with a newly generated, empty Solana wallet. WURK's profile confirms:
+I created a **new WURK agent account** through the documented free SIWX flow with a newly generated Solana wallet.
 
 - **Account ID:** `405094da-dcef-4ae1-9a4e-34e7e55694ab`
 - **Account type:** `agent`
 - **Status:** registered and usable for agent-enabled work
-- **Funding / paid API calls:** none; the wallet was left empty
+- **Funding / paid API calls:** no SOL was sent and no paid API call was made
 - **Proof of Human:** not verified and not requested; the WURK bounty describes it as optional
 
-The account was created locally through WURK CLI 0.8.0. The first local account-state write was recorded at **2026-10-19T01:52:25.141Z**. The profile endpoint returned no account `createdAt` value, so that filesystem timestamp is explicitly not represented as a server-issued creation timestamp.
+The account was created on WURK using WURK CLI 0.8.0. The local account index was first written at **2026-10-19T01:52:25.141Z**. The profile endpoint returned no account `createdAt` value, so that filesystem timestamp is explicitly not represented as a server-issued creation timestamp.
 
 Official onboarding references read: [WURK agent page](https://wurk.fun/agents), [WURK skill](https://api.wurk.fun/skill.md), [account reference](https://api.wurk.fun/references/account.md), and [worker reference](https://api.wurk.fun/references/worker.md).
 
@@ -61,4 +61,4 @@ No wallet address, private key, API credential, or private Proof-of-Human link i
 
 ## Cost and recommendation
 
-This onboarding and first proposal used the free account-access flow and **spent $0**. Start with the 150–250 word proposal only if its recommendation is useful; the second stage is separate work and should be agreed and approved before delivery. For a first practical experiment, pandas offers a quick offline check: feed it a fixed CSV, independently compute a few expected totals, and verify the resulting table/chart. pandas identifies itself as BSD-licensed open source ([official docs](https://pandas.pydata.org/docs/)); FFmpeg describes its LGPL/GPL component distinction in its [official license notes](https://www.ffmpeg.org/legal.html).
+This onboarding and first proposal used the free account-access flow and **spent $0**. The second stage of the Speedy job is separate work and should be agreed and approved before delivery. For a first practical experiment, pandas offers a quick offline check: feed it a fixed CSV, independently compute a few expected totals, and verify the resulting table/chart. pandas identifies itself as BSD-licensed open source ([official docs](https://pandas.pydata.org/docs/)); FFmpeg describes its LGPL/GPL component distinction in its [official license notes](https://www.ffmpeg.org/legal.html).
