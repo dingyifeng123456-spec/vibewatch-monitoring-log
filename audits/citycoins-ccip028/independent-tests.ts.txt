@@ -1,0 +1,78 @@
+
+test('recall plus extension revocation atomically prevents a permissionless re-fund', async function () {
+  const w = await setup();
+  const treasury = `${w.deployer}.mock-treasury`;
+  const vault = `${w.deployer}.${VAULT}`;
+  w.activate();
+  ok(w.call('mock-ft', 'mint', [Cl.uint(300000), w.cp('mock-treasury')]));
+  ok(w.call(VAULT, 'fund-from-treasury'));
+  expect(w.ft(vault)).toBe(300000n);
+  expect(w.ft(treasury)).toBe(0n);
+  expect(result(w.call('base-dao', 'set-extension', [w.cp(VAULT), Cl.bool(false)]))).toBe('(err u900)');
+
+  const stopSource = `(impl-trait .proposal-trait.proposal-trait)
+    (define-public (execute (sender principal))
+      (begin
+        (try! (contract-call? .base-dao set-extension .${VAULT} false))
+        (try! (contract-call? .${VAULT} dao-recall-sbtc))
+        (ok true)))`;
+  expect(result(w.sim.deployContract('independent-stop-vault', stopSource, { clarityVersion: 6 }, w.deployer))).toBe('true');
+  for (const who of w.approvers.slice(0, 3)) ok(w.signal(who, 'independent-stop-vault'));
+
+  expect(w.extension(VAULT)).toBe('false');
+  expect(w.ft(treasury)).toBe(300000n);
+  expect(w.ft(vault)).toBe(0n);
+  expect(w.read(VAULT, 'get-clock').value['batch-start']).toEqual(Cl.none());
+  expect(result(w.call(VAULT, 'fund-from-treasury'))).toBe('(err u2000)');
+  expect(w.ft(treasury)).toBe(300000n);
+  expect(w.ft(vault)).toBe(0n);
+});
+
+test('two vault sweeps preserve queue priority and MIA conservation after a DAO par decrease', async function () {
+  const w = await setup();
+  const vault = `${w.deployer}.${VAULT}`;
+  const book = `${w.deployer}.${BOOK}`;
+  const amount = 100000000000n;
+  const sellers = [w.stranger, w.approvers[3], w.approvers[4]];
+  for (const seller of sellers) ok(w.call('mock-mia', 'mint', [Cl.uint(amount), Cl.principal(seller)]));
+  w.activate();
+  const limit = BigInt(w.read(BOOK, 'get-par-ustx', [Cl.uint(amount)]).value);
+  const prices = [limit / 8n, limit / 3n, (limit * 3n) / 4n];
+  expect(prices[0]).toBeGreaterThan(0n);
+  for (const index of [2, 1, 0]) ok(w.call(BOOK, 'place-offer', [Cl.uint(amount), Cl.uint(prices[index])], sellers[index]));
+
+  for (const who of BACKING) {
+    const half = w.stx(who) / 2n;
+    if (half > 0n) ok(w.sim.transferSTX(half, w.deployer, who));
+  }
+  const refresh = `(impl-trait .proposal-trait.proposal-trait)
+    (define-public (execute (sender principal))
+      (begin (try! (contract-call? .${BOOK} update-par)) (ok true)))`;
+  expect(result(w.sim.deployContract('independent-refresh-par', refresh, { clarityVersion: 6 }, w.deployer))).toBe('true');
+  for (const who of w.approvers.slice(0, 3)) ok(w.signal(who, 'independent-refresh-par'));
+  expect(w.read(BOOK, 'at-or-below-par?', [Cl.uint(amount), Cl.uint(prices[1])])).toEqual(Cl.bool(true));
+  expect(w.read(BOOK, 'at-or-below-par?', [Cl.uint(amount), Cl.uint(prices[2])])).toEqual(Cl.bool(false));
+
+  const first = prices[1] / 2n;
+  const partial = (amount * first) / prices[1];
+  const startBalances = sellers.map(w.stx);
+  ok(w.sim.transferSTX(prices[0] + first, vault, w.deployer));
+  ok(w.call(VAULT, 'fuel-fair-book'));
+  ok(w.call(BOOK, 'cross-book'));
+  expect(w.stx(book)).toBe(0n);
+  expect(w.stx(sellers[0]) - startBalances[0]).toBe(prices[0]);
+  expect(w.stx(sellers[1]) - startBalances[1]).toBe(first);
+  expect(w.stx(sellers[2]) - startBalances[2]).toBe(0n);
+  expect(w.read('mock-mia', 'get-burned')).toEqual(Cl.uint(amount + partial));
+
+  ok(w.sim.transferSTX(prices[1] - first + 1n, vault, w.deployer));
+  ok(w.call(VAULT, 'fuel-fair-book'));
+  ok(w.call(BOOK, 'cross-book'));
+  expect(w.stx(book)).toBe(1n);
+  expect(w.stx(sellers[1]) - startBalances[1]).toBe(prices[1]);
+  expect(w.stx(sellers[2]) - startBalances[2]).toBe(0n);
+  expect(w.read(BOOK, 'get-offer-count')).toEqual(Cl.uint(1));
+  expect(w.read('mock-mia', 'get-burned')).toEqual(Cl.uint(2n * amount));
+  ok(w.call(BOOK, 'cancel-offer', [], sellers[2]));
+  expect(w.read('mock-mia', 'get-balance', [Cl.principal(sellers[2])])).toEqual(Cl.ok(Cl.uint(amount)));
+});

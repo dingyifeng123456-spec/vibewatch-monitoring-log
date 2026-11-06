@@ -1,0 +1,47 @@
+{
+  "tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "checks": [
+    {
+      "test": "strangers, deployer and approvers cannot invoke activation directly or through a proxy",
+      "status": "passed"
+    },
+    {
+      "test": "three distinct approvers activate without a vote; duplicates do not count; no funds move",
+      "status": "passed"
+    },
+    {
+      "test": "activation works with an empty rewards treasury and cannot execute twice",
+      "status": "passed"
+    },
+    {
+      "test": "a separately deployed copy cannot reinitialize an already active book",
+      "status": "passed"
+    },
+    {
+      "test": "the existing Direct Execute sunset still prevents activation",
+      "status": "passed"
+    },
+    {
+      "test": "failed par initialization rolls back extension, allowlist, proposal execution and final signal",
+      "status": "passed"
+    },
+    {
+      "test": "treasury withdrawals and governance settings remain inaccessible to ordinary callers",
+      "status": "passed"
+    },
+    {
+      "test": "permissionless funding, maker placement, expired-window swap, book funding and MIA burn",
+      "status": "passed"
+    },
+    {
+      "test": "recall plus extension revocation atomically prevents a permissionless re-fund",
+      "status": "passed"
+    },
+    {
+      "test": "two vault sweeps preserve queue priority and MIA conservation after a DAO par decrease",
+      "status": "passed"
+    }
+  ]
+}

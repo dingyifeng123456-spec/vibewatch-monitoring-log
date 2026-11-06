@@ -1,0 +1,27 @@
+{
+  "provider": "https://api.hiro.so",
+  "height": 9424116,
+  "burnHeight": 974763,
+  "indexBlockHash": "0xb5f33ac5b45eeeb8cf9771dd78b3a20173152ebaa40e5de4d743868cf00b5651",
+  "time": "2026-11-06T05:30:33.000Z",
+  "mining": {
+    "principal": "SP8A9HZ3PKST0S42VM9523Z9NV42SZ026V4K39WH.ccd002-treasury-mia-mining-v3",
+    "unlockedMicroStx": "0",
+    "lockedMicroStx": "0"
+  },
+  "staking": {
+    "principal": "SPN4Y5QPGQA8882ZXW90ADC2DHYXMSTN8VAR8C3X.ccd014-pox5-staking-mia",
+    "unlockedMicroStx": "0",
+    "lockedMicroStx": "10241497066794"
+  },
+  "miaV1Whole": "260130901",
+  "miaV2Micro": "4754074853491373",
+  "totalBackingMicroStx": "10241497066794",
+  "totalSupplyMicroMia": "5014205754491373",
+  "parScaled": "204249",
+  "microStxPerMillionMia": "2042490000",
+  "directExecuteEnabled": "true",
+  "signalsRequired": "u3",
+  "sbtcAllowedBeforeActivation": "true",
+  "sunsetRaw": "u277428"
+}
